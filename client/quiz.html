@@ -1,0 +1,15 @@
+<template name="quiz">
+	<ul class="quiz">
+		<p>${{integral}}$ = ${{differential}}$</p>
+	{{#mathjax}}
+	{{#each this}}
+		<p>${{integral}}$ = ${{differential}}$</p>
+	{{/each}}
+	{{/mathjax}}
+	</ul>
+	<ul>
+		<li>Correct</li>
+		<li>Wrong</li>
+		<li>Reset</li>
+	</ul>
+</template>

@@ -1,10 +1,4 @@
-/*
-Template.study.helpers({
-'equations': function () { return BasicIntegration.find(); }
-});
-*/
-
-var getPathname = function() { return window.location.pathname.replace(/^.*[\\\/]/g, ''); }
+getPathname = function() { return window.location.pathname.replace(/^.*[\\\/]/g, ''); }
 
 currentQuestionSet = {};
 quiz = {
@@ -20,6 +14,10 @@ quiz = {
 };
 
 Template.mainLayout.helpers({
+	currentSet: getPathname()
+});
+
+Template.study.helpers({
 	currentSet: getPathname()
 });
 

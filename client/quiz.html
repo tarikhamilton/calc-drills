@@ -1,14 +1,14 @@
 <template name="quiz">
 	<div id="quiz">
-		{{#mathjax}}
-			<p>
-				<span id="quiz-question">${{integral}}$</span> = 
-				<span id="quiz-answer">${{differential}}$</span>
-			</p>
-		{{/mathjax}}
+		<div id="question">
+			{{#mathjax}}
+			<span id="quiz-question">${{integral}}$</span> = 
+			<span id="quiz-answer">${{differential}}$</span>
+			{{/mathjax}}
+		</div>
 		<ul id="score">
-			<li>Accuracy Score: <span id="accuracy"></span></li>
-			<li>Total Answered: <span id="total"></span></li>
+			<li>Accuracy Score: <span id="accuracy">---%</span></li>
+			<li>Total Answered: <span id="total">0</span></li>
 		</ul>
 		<ul id="controls">
 			<li><a id="correct" href="#">Correct</a></li>

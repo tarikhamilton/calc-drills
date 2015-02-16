@@ -10,3 +10,27 @@ ul.study {
 	margin: 0 auto;
 	text-align: center;
 }
+
+
+#quiz {
+	#question {
+		margin: 2em;
+	}
+	#controls {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			list-style: none;
+			a {
+				background: blue;
+				color: white;
+				padding: 8px;
+				border-radius: 4px;
+			}
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -2,6 +2,6 @@
 	<h1>Template</h1>
 	<a href="{{pathFor 'study' collection='basic-integration'}}">Basic Integration</a>
 	<a href="{{pathFor 'study' collection='non-existant'}}">Test Fuk</a>
-	<a href="{{pathFor 'quiz' collection=''}}/{{currentSet}}">TAKE A QUIZ</a>
+	<a href="{{pathFor 'quiz' collection=currentSet}}">TAKE A QUIZ</a>
 	{{> yield}}
 </template>

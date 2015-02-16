@@ -74,6 +74,5 @@ if (BasicIntegration.find().count() === 0) {
 }
 
 Meteor.publish('equations', function() {
-	Counts.publish(this, 'equationsTotal', BasicIntegration.find());
 	return BasicIntegration.find();
 });

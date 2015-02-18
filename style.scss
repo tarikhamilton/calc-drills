@@ -15,12 +15,25 @@ ul.study {
 #quiz {
 	#question {
 		margin: 2em;
+		#quiz-question {
+
+		}
+		#quiz-answer {
+		}
 	}
 	#controls {
 		margin: 0;
 		padding: 0;
+		.change {
+			margin: 16px 0;
+			padding: 0;
+			li {
+				display: inline;
+			}
+		}
 		li {
-			display: inline-block;
+			display: block;
+			margin: 8px 0;
 			list-style: none;
 			a {
 				background: blue;

@@ -5418,13 +5418,53 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-h1 {
-  text-align: center; }
-
 ul.study {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   text-align: center; }
+
+#quiz {
+  margin: 0 auto;
+  text-align: center; }
+  #quiz #question {
+    margin: 2em; }
+  #quiz #quiz-answer {
+    display: none; }
+  #quiz #quiz-answer.display-toggle-answer {
+    display: inline; }
+  #quiz #quiz-button-check {
+    background: #58d47e; }
+  #quiz #quiz-button-correct {
+    background: #58d47e; }
+  #quiz #quiz-button-wrong {
+    background: #be5454; }
+  #quiz #quiz-button-reset {
+    background: #be5454; }
+  #quiz #quiz-button-reset {
+    margin-top: 2em; }
+
+#quiz #score {
+  list-style: none;
+  margin: 2em 0;
+  padding: 0; }
+
+#quiz ul#controls {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center; }
+  #quiz ul#controls a {
+    color: white;
+    display: block;
+    padding: 8px; }
+  #quiz ul#controls li {
+    border-radius: 4px;
+    display: none; }
+  #quiz ul#controls .display-toggle {
+    display: block; }
+    @media screen and (min-width: 480px) {
+      #quiz ul#controls .display-toggle {
+        display: inline-block; } }
 
 /*# sourceMappingURL=style.css.map */

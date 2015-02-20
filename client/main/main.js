@@ -23,7 +23,7 @@ quiz = {
 };
 
 quiz.newQuestion = function() { 
-	document.getElementById('quiz-answer').style.display = 'none';
+	document.getElementById('quiz-answer').className = ' ';
 	var total = currentQuestionSet.length;
 	var randomIndex = Math.floor(Math.random() * total);
 	var question = '$' + currentQuestionSet[randomIndex].integral + '$';
@@ -37,18 +37,23 @@ quiz.newQuestion = function() {
 
 quiz.buttons = {
 	check: function() {
-		document.getElementById('quiz-answer').style.display = 'inline';
-		document.getElementById('quiz-button-check').style.display = 'none';
-		document.getElementById('quiz-button-correct').style.display = 'inline';
-		document.getElementById('quiz-button-wrong').style.display = 'inline';
+		document.getElementById('quiz-answer').className = 'display-toggle-answer';
+		document.getElementById('quiz-button-check').className = ' ';
+		document.getElementById('quiz-button-correct').className = 'display-toggle';
+		document.getElementById('quiz-button-wrong').className = 'display-toggle';
 	},
 	reset: function() {
-		document.getElementById('quiz-answer').style.display = 'none';
-		document.getElementById('quiz-button-check').style.display = 'inline';
-		document.getElementById('quiz-button-correct').style.display = 'none';
-		document.getElementById('quiz-button-wrong').style.display = 'none';
+		document.getElementById('quiz-answer').className = ' ';
+		document.getElementById('quiz-button-check').className = 'display-toggle';
+		document.getElementById('quiz-button-correct').className = ' ';
+		document.getElementById('quiz-button-wrong').className = ' ';
+		document.getElementById('quiz-button-reset').className = 'display-toggle';
 	}
 }
+
+Template.quiz.rendered = function() {
+	quiz.buttons.reset();
+};
 
 Template.mainLayout.helpers({
 	currentSet: getPathname()

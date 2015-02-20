@@ -1,8 +1,6 @@
 @import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
 
-h1 {
-	text-align: center;
-}
+
 
 ul.study {
 	list-style: none;
@@ -11,8 +9,13 @@ ul.study {
 	text-align: center;
 }
 
+$colorPositive: #58d47e;
+$colorNegative: #be5454;
+$colorNeutral: #666;
 
 #quiz {
+	margin: 0 auto;
+	text-align: center;
 	#question {
 		margin: 2em;
 		#quiz-question {
@@ -21,29 +24,46 @@ ul.study {
 		#quiz-answer {
 		}
 	}
-	#controls {
-		margin: 0;
-		padding: 0;
-		.change {
-			margin: 16px 0;
-			padding: 0;
-			li {
-				display: inline;
-			}
-		}
-		li {
-			display: block;
-			margin: 8px 0;
-			list-style: none;
-			a {
-				background: blue;
-				color: white;
-				padding: 8px;
-				border-radius: 4px;
-			}
-			a:hover {
-				text-decoration: none;
-			}
+	#quiz-answer {
+		display: none;
+	}
+	#quiz-answer.display-toggle-answer {
+		display: inline;
+	}
+
+	#quiz-button-check { background: $colorPositive; }
+	#quiz-button-correct { background: $colorPositive; }
+	#quiz-button-wrong { background: $colorNegative; }
+	#quiz-button-reset { background: $colorNegative; }
+	#quiz-button-reset { margin-top: 2em; }
+}
+
+#quiz #score {
+	list-style: none;
+	margin: 2em 0;
+	padding: 0;
+}
+
+#quiz ul#controls {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	a {
+		color: white;
+		display: block;
+		padding: 8px;
+	}
+	li {
+		border-radius: 4px;
+		display: none;
+	}
+
+
+	.display-toggle {
+		display: block;
+		@media screen and (min-width: $screen-xs) {
+			display: inline-block;
 		}
 	}
 }

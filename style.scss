@@ -1,32 +1,42 @@
 @import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
 
-$colorPositive: #58d47e;
+$colorPositive: #58d47e; //79E94A
 $colorNegative: #be5454;
 $colorNeutral: #999;
+$colorMain: #37caa6;
+$colorSecondary: #4C83CA;
+
 
 $fontSize: 18px;
 
 
 /*
- * Navigation / Looo
+ * Navigation / Logo
  *===============================*/
 
 h1 {
 	font-size: $fontSize * 1.7;
 	margin: $fontSize/2 0 $fontSize/2;
+	color: white;
+}
+
+@media screen and (min-width: $screen-sm) {
+	.row.header {
+		border-radius: 0 0 8px 8px;
+	}	
 }
 
 #breadcrumbs {
-	$color: $colorNeutral;
+	$color: $colorSecondary;
 	margin: 0;
 	padding: 0;
-	.fa {
-		color: black;
-	}
 	div {
-		padding-bottom: 8px;
+		padding-bottom: 11px;
 		padding-top: 8px;
-		border-bottom: 1px solid $color;
+	}
+	i {
+		font-weight: 700;
+		font-size: $fontSize * 1.1;
 	}
 	h2 {
 		font-size: $fontSize;
@@ -51,13 +61,18 @@ h1 {
 	}
 	a:hover {
 		text-decoration: none;
-		background: lighten($color, 10%);
-
+		background: lighten($color, 15%);
+	}
+	.breadcrumb-buttons {
+		box-shadow: 0 3px 0 lighten($color, 15%);
 	}
 }
 
 .header {
-	background: $colorPositive;
+	background: $colorMain;
+	background-image: url(header.png);
+	background-size: contain;
+	background-repeat: x-repeat;
 }
 
 /*
@@ -65,23 +80,25 @@ h1 {
  *===============================*/
 
 #how-to-popup {
-	$colorBg: $colorPositive;
-	$colorH3: darken($colorBg, 20%);
-	$colorP: darken($colorBg, 20%);
-	$colorClose: $colorNegative;
+	$colorBg: lighten($colorNeutral, 30%);
+	$colorH3: darken($colorPositive, 15%);
+	$colorP: darken($colorBg, 40%);
+	$colorClose: $colorPositive;
 	$colorExit: darken($colorBg, 20%);
 	padding: $fontSize;
-	margin: $fontSize;
+	margin: $fontSize auto;
 	background: $colorBg;
 	border-radius: 6px;
-	border: 6px dotted darken($colorBg, 15%);
+	border: 6px dotted darken($colorBg, 10%);
 	box-shadow: 5px 5px 0px darken($colorNeutral, 8%);
+	max-width: 420px;
 	h3 {
 		color: $colorH3;
 		font-size: $fontSize * 1;
 		margin: $fontSize/4 0 0;
 		padding: 0;
 		text-transform: uppercase;
+		font-weight: 700;
 	}
 	p {
 		color: $colorP;
@@ -91,7 +108,7 @@ h1 {
 	a.exit-button {
 		float: right;
 		color: $colorExit;
-		text-shadow: 1px 1px 0 lighten($colorExit, 40%), -1px -1px 0 darken($colorExit, 5%);
+		text-shadow: 2px 2px 0 lighten($colorExit, 40%), -2px -2px 0 darken($colorExit, 5%);
 	}
 	a.close-button {
 		margin: 0 auto;
@@ -99,9 +116,14 @@ h1 {
 		text-align: center;
 		display: block;
 		color: white;
+		font-weight: 700;
 		padding: 4px;
 		background: $colorClose;
-		border: 2px solid darken($colorClose, 20%);
+		border: 4px solid darken($colorClose, 10%);
+	}
+	a.close-button:hover {
+		text-decoration: none;
+		background: lighten($colorClose, 10%);
 	}
 }
 

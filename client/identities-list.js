@@ -1,6 +1,13 @@
 Template['identities-list'].events({
-	'click a' : function() {
+	'click #how-to-popup' : function() {
 		$('#how-to-popup').slideUp();
-		//document.getElementById('how-to-popup').style.display = 'none';
+		Session.set('hidePopup', 'true');
 	}
 });
+
+Template['identities-list'].rendered = function() {
+	hidden = Session.get('hidePopup');
+	if (hidden === 'true') {
+		document.getElementById('how-to-popup').style.display = 'none';
+	}
+}

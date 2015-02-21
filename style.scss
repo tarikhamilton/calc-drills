@@ -127,11 +127,18 @@ h1 {
 	}
 }
 
-.list-of-sets ul {
+.list-of-sets {
 	$color: $colorNeutral;
 	list-style: inside square;
-	padding: 0;
 	color: lighten($color, 30%);
+	h3 {
+		color: darken($colorMain, 5%);
+		margin: 0;
+	}
+	ul {
+		margin: $fontSize 0;
+		padding: 0;
+	}
 	a {
 		color: $color;
 	}

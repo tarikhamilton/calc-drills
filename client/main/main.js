@@ -50,13 +50,19 @@ quiz.buttons = {
 	}
 }
 
+function drawBreadcrumbs() {
+	document.getElementById('study-up').href = '/study/' + FixtureNames.current;
+	document.getElementById('quiz-up').href = '/quiz/' + FixtureNames.current;
+	document.getElementById('current-question-set').innerHTML = FixtureNames[FixtureNames.current].displayName;
+}
+
 Template.quiz.rendered = function() {
+	drawBreadcrumbs();
 	quiz.buttons.reset();
 };
 
 Template.study.rendered = function() {
-	document.getElementById('quiz-up').href = '/quiz/' + FixtureNames.current;
-	document.getElementById('breadcrumbs').innerHTML = FixtureNames[FixtureNames.current].displayName;
+	drawBreadcrumbs();
 }
 
 Template.mainLayout.rendered = function() {

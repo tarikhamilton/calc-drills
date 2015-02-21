@@ -1,10 +1,12 @@
 <template name="study">
-	<a id="quiz-up" href="{{pathFor 'quiz' collection=currentSet}}">Quiz Up</a>
-	<ul class="study">
-	{{#mathjax}}
-	{{#each this}}
-		<li>${{question}}$ = ${{answer}}$</li>
-	{{/each}}
-	{{/mathjax}}
-	</ul>
+	{{> breadcrumbs}}
+	<div class="main-content">
+		<ul class="study">
+		{{#mathjax}}
+		{{#each this}}
+			<li>${{question}}$ = ${{answer}}$</li>
+		{{/each}}
+		{{/mathjax}}
+		</ul>
+	</div>
 </template>

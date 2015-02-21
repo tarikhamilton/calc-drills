@@ -15,15 +15,71 @@ $colorNeutral: #999;
 
 $fontSize: 18px;
 
+
+/*
+ * Navigation / Looo
+ *===============================*/
+
 h1 {
 	font-size: $fontSize * 1.7;
 	margin: $fontSize/2 0 $fontSize/4;
 }
 
-h2 {
-	font-size: $fontSize * 1.4;
+#breadcrumbs {
+	$color: $colorNeutral;
 	margin: 0;
+	padding: 0;
+	div {
+		padding-bottom: 8px;
+		border-bottom: 1px solid $color;
+	}
+	h2 {
+		font-size: $fontSize * 1.2;
+		padding: $fontSize/4 0;
+		margin: 0;
+		display: inline-block;
+	}
+	a {
+		float: right;
+		padding: 6px;
+		display: inline-block;
+		background: $color;
+		border-radius: 8px;
+		margin-left: $fontSize/2;
+		color: lighten($color, 50%);
+	}
+	a:hover {
+		text-decoration: none;
+		background: lighten($color, 10%);
+
+	}
 }
+
+/*
+ * Home
+ *===============================*/
+
+.how-to {
+	h2 {
+		font-size: $fontSize * 1.2;
+	}
+	ol {
+		list-style: outside none;
+		padding-left: 0;
+	}
+}
+
+/*
+ * Main Content (Universal)
+ *===============================*/
+
+.main-content {
+	margin-top: $fontSize * 2;
+}
+
+/*
+ * Quiz
+ *===============================*/
 
 #quiz {
 	margin: 0 auto;
@@ -98,6 +154,6 @@ h2 {
 	}
 
 	@media screen and (min-width: $screen-xs) {
-		width: 50%;
+		width: 25%;
 	}
 }

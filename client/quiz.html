@@ -1,5 +1,6 @@
 <template name="quiz">
-	<div id="quiz">
+	{{> breadcrumbs}}
+	<div id="quiz" class="main-content">
 		<div id="question">
 			{{#mathjax}}
 			<span id="quiz-question">${{question}}$</span> = 

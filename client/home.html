@@ -1,18 +1,26 @@
 <template name="home">
-	<h2>Real Quick How-To:</h2>
-	<ul>
-		<li>1. Pick a list of identities to drill from below.</li>
-		<li>2. Select Quiz Up and try not to mess up.</li>
-		<li>3. ???</li>
-		<li>4. Profit!</li>
-	</ul>
-	<h3>Calculus</h3>
-	<ul>
-		<li><a href="{{pathFor 'study' collection='basic-integration'}}">Basic Integration</a></li>
-	</ul>
-	<h3>Trigonometry</h3>
-	<ul>
-		<li><a href="{{pathFor 'study' collection='trig-reciprocal-identities'}}">Reciprocal Identities</a></li>
-	</ul>
+	<div class="how-to">
+		<!--<h2>Real Quick Instructions:</h2>
+		<ol>
+			<li>1. Pick a list of identities to drill from below.</li>
+			<li>2. Select Quiz Up and try not to mess up.</li>
+			<li>3. ???</li>
+			<li>4. Profit!</li>
+		</ol>-->
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Calculus</h3>
+			<ul>
+				<li><a href="{{pathFor 'study' collection='basic-integration'}}">Basic Integration</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-6">
+			<h3>Trigonometry</h3>
+			<ul>
+				<li><a href="{{pathFor 'study' collection='trig-reciprocal-identities'}}">Reciprocal Identities</a></li>
+			</ul>
+		</div>
+	</div>
 		
 </template>

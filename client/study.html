@@ -1,9 +1,9 @@
 <template name="study">
-	<a href="{{pathFor 'quiz' collection=currentSet}}">Quiz Up</a>
+	<a id="quiz-up" href="{{pathFor 'quiz' collection=currentSet}}">Quiz Up</a>
 	<ul class="study">
 	{{#mathjax}}
 	{{#each this}}
-		<li>${{integral}}$ = ${{differential}}$</li>
+		<li>${{question}}$ = ${{answer}}$</li>
 	{{/each}}
 	{{/mathjax}}
 	</ul>

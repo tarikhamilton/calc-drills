@@ -11,13 +11,27 @@ ul.study {
 
 $colorPositive: #58d47e;
 $colorNegative: #be5454;
-$colorNeutral: #666;
+$colorNeutral: #999;
+
+$fontSize: 18px;
+
+h1 {
+	font-size: $fontSize * 1.7;
+	margin: $fontSize/2 0 $fontSize/4;
+}
+
+h2 {
+	font-size: $fontSize * 1.4;
+	margin: 0;
+}
 
 #quiz {
 	margin: 0 auto;
 	text-align: center;
+
 	#question {
 		margin: 2em;
+		font-size: $fontSize * 1.2;
 		#quiz-question {
 
 		}
@@ -30,12 +44,28 @@ $colorNeutral: #666;
 	#quiz-answer.display-toggle-answer {
 		display: inline;
 	}
+	#quiz-button-correct, #quiz-button-wrong {
+		margin: $fontSize/2 0;
+	}
 
-	#quiz-button-check { background: $colorPositive; }
-	#quiz-button-correct { background: $colorPositive; }
-	#quiz-button-wrong { background: $colorNegative; }
-	#quiz-button-reset { background: $colorNegative; }
-	#quiz-button-reset { margin-top: 2em; }
+	#quiz-button-check { background: $colorNeutral;
+		&:hover { background: lighten($colorNeutral, 10%); }
+	}
+	#quiz-button-correct { background: $colorPositive; 
+		&:hover { background: darken($colorPositive, 10%); }
+	}
+	#quiz-button-wrong { background: $colorNegative;
+		&:hover { background: darken($colorNegative, 10%); }
+	}
+	#quiz-button-reset { background: $colorNegative;
+		&:hover { background: darken($colorNegative, 10%); }
+	}
+	#quiz-button-reset { 
+		position: absolute;
+		margin-top: ($fontSize * 6) + ($fontSize * 2);
+		width: 100%;
+		top: 0; 
+	}
 }
 
 #quiz #score {
@@ -45,25 +75,29 @@ $colorNeutral: #666;
 }
 
 #quiz ul#controls {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 	text-align: center;
+	position: relative;
 	a {
 		color: white;
 		display: block;
+		width: 100%;
 		padding: 8px;
 	}
 	li {
-		border-radius: 4px;
+		border-radius: 8px;
 		display: none;
+		height: $fontSize * 2;
 	}
 
 
 	.display-toggle {
 		display: block;
-		@media screen and (min-width: $screen-xs) {
-			display: inline-block;
-		}
+	}
+
+	@media screen and (min-width: $screen-xs) {
+		width: 50%;
 	}
 }

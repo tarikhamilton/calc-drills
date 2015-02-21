@@ -1,9 +1,7 @@
 <template name="mainLayout">
 	<div class="container">
 	<h1><a href="{{pathFor 'home'}}">StudyCalc</a></h1>
-		<ul>
-			<li><a href="{{pathFor 'study' collection='basic-integration'}}">Basic Integration</a></li>
-		</ul>
-		{{> yield}}
+	<h2>{{currentSetDisplayName}}</h2>
+	{{> yield}}
 	</div>
 </template>

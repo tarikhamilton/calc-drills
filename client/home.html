@@ -1,13 +1,18 @@
 <template name="home">
-	<div class="col-xs-12">
-		<div class="jumbotron">
-			<h2>I failed Calculus II, but you don't have to</h2>
-			<ul>
-				<li>1. Pick something to drill</li>
-				<li>2. Quiz up when you're ready</li>
-				<li>3. ???</li>
-				<li>4. Profit.</li>
-			</ul>
-		</div>
-	</div>
+	<h2>Real Quick How-To:</h2>
+	<ul>
+		<li>1. Pick a list of identities to drill from below.</li>
+		<li>2. Select Quiz Up and try not to mess up.</li>
+		<li>3. ???</li>
+		<li>4. Profit!</li>
+	</ul>
+	<h3>Calculus</h3>
+	<ul>
+		<li><a href="{{pathFor 'study' collection='basic-integration'}}">Basic Integration</a></li>
+	</ul>
+	<h3>Trigonometry</h3>
+	<ul>
+		<li><a href="{{pathFor 'study' collection='trig-reciprocal-identities'}}">Reciprocal Identities</a></li>
+	</ul>
+		
 </template>

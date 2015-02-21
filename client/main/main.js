@@ -1,6 +1,5 @@
-getPathname = function() { return window.location.pathname.replace(/^.*[\\\/]/g, ''); }
-
 currentQuestionSet = {};
+
 quiz = {
 	score: 0,
 	answered: 0,
@@ -26,8 +25,8 @@ quiz.newQuestion = function() {
 	document.getElementById('quiz-answer').className = ' ';
 	var total = currentQuestionSet.length;
 	var randomIndex = Math.floor(Math.random() * total);
-	var question = '$' + currentQuestionSet[randomIndex].integral + '$';
-	var answer = '$' + currentQuestionSet[randomIndex].differential + '$';
+	var question = '$' + currentQuestionSet[randomIndex].question + '$';
+	var answer = '$' + currentQuestionSet[randomIndex].answer + '$';
 	document.getElementById('quiz-question').innerHTML = question;
 	document.getElementById('quiz-answer').innerHTML = answer;
 	MathJax.Hub.Typeset();
@@ -55,8 +54,13 @@ Template.quiz.rendered = function() {
 	quiz.buttons.reset();
 };
 
+Template.study.rendered = function() {
+	document.getElementById('quiz-up').href = '/quiz/' + FixtureNames.current;
+}
+
 Template.mainLayout.helpers({
-	currentSet: getPathname()
+	currentSet: getPathname(),
+	currentSetDisplayName: FixtureNames[getPathname()].displayName
 });
 
 Template.study.helpers({
@@ -69,6 +73,7 @@ Template.quiz.helpers({
 		return Router.routes['quiz'].data();
 	}
 });
+
 
 Template.quiz.events({
 	'click #quiz #controls a' : function(e) {

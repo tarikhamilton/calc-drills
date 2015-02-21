@@ -1,14 +1,5 @@
 @import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
 
-
-
-ul.study {
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	text-align: center;
-}
-
 $colorPositive: #58d47e;
 $colorNegative: #be5454;
 $colorNeutral: #999;
@@ -22,22 +13,32 @@ $fontSize: 18px;
 
 h1 {
 	font-size: $fontSize * 1.7;
-	margin: $fontSize/2 0 $fontSize/4;
+	margin: $fontSize/2 0 $fontSize/2;
 }
 
 #breadcrumbs {
 	$color: $colorNeutral;
 	margin: 0;
 	padding: 0;
+	.fa {
+		color: black;
+	}
 	div {
 		padding-bottom: 8px;
+		padding-top: 8px;
 		border-bottom: 1px solid $color;
 	}
 	h2 {
-		font-size: $fontSize * 1.2;
-		padding: $fontSize/4 0;
+		font-size: $fontSize;
 		margin: 0;
+		padding: $fontSize/4;
 		display: inline-block;
+	}
+	#back {
+		float: none;
+		margin: 0;
+		background: none;
+		padding: 0;
 	}
 	a {
 		float: right;
@@ -55,17 +56,62 @@ h1 {
 	}
 }
 
+.header {
+	background: $colorPositive;
+}
+
 /*
  * Home
  *===============================*/
 
-.how-to {
-	h2 {
-		font-size: $fontSize * 1.2;
+#how-to-popup {
+	$colorBg: $colorPositive;
+	$colorH3: darken($colorBg, 20%);
+	$colorP: darken($colorBg, 20%);
+	$colorClose: $colorNegative;
+	$colorExit: darken($colorBg, 20%);
+	padding: $fontSize;
+	margin: $fontSize;
+	background: $colorBg;
+	border-radius: 6px;
+	border: 6px dotted darken($colorBg, 15%);
+	box-shadow: 5px 5px 0px darken($colorNeutral, 8%);
+	h3 {
+		color: $colorH3;
+		font-size: $fontSize * 1;
+		margin: $fontSize/4 0 0;
+		padding: 0;
+		text-transform: uppercase;
 	}
-	ol {
-		list-style: outside none;
-		padding-left: 0;
+	p {
+		color: $colorP;
+		margin: $fontSize 0;
+		font-size: $fontSize * 0.8;
+	}
+	a.exit-button {
+		float: right;
+		color: $colorExit;
+		text-shadow: 1px 1px 0 lighten($colorExit, 40%), -1px -1px 0 darken($colorExit, 5%);
+	}
+	a.close-button {
+		margin: 0 auto;
+		width: 100px;
+		text-align: center;
+		display: block;
+		color: white;
+		padding: 4px;
+		background: $colorClose;
+		border: 2px solid darken($colorClose, 20%);
+	}
+}
+
+.list-of-sets ul {
+	$color: $colorNeutral;
+	list-style: inside square;
+	padding: 0;
+	color: lighten($color, 30%);
+	a {
+		color: $color;
 	}
 }
 
@@ -75,6 +121,21 @@ h1 {
 
 .main-content {
 	margin-top: $fontSize * 2;
+}
+
+/*
+ * Study
+ *===============================*/
+
+
+ul.study {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	li {
+		margin-bottom: $fontSize;
+	}
 }
 
 /*

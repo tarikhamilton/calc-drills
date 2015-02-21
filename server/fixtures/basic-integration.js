@@ -69,7 +69,7 @@ if (BasicIntegration.find().count() === 0) {
 	});
 	BasicIntegration.insert({
 		question: '\\int \\frac{du}{u\\sqrt{u^2-a^2}}',
-		answer: '\\frac{1}{a} \\arcsec \\frac{|u|}{a}+ C'
+		answer: '\\frac{1}{a} \\arcsec{\\frac{|u|}{a}+ C'
 	});
 }
 

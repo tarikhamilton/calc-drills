@@ -50,12 +50,6 @@ quiz.buttons = {
 	}
 }
 
-function drawBreadcrumbs() {
-	document.getElementById('study-up').href = '/study/' + FixtureNames.current;
-	document.getElementById('quiz-up').href = '/quiz/' + FixtureNames.current;
-	document.getElementById('current-question-set').innerHTML = FixtureNames[FixtureNames.current].displayName;
-}
-
 Template.quiz.rendered = function() {
 	drawBreadcrumbs();
 	quiz.buttons.reset();
@@ -69,8 +63,7 @@ Template.mainLayout.rendered = function() {
 }
 
 Template.mainLayout.helpers({
-	currentSet: getPathname(),
-	currentSetDisplayName: FixtureNames[getPathname()].displayName
+	currentSet: getPathname()
 });
 
 Template.study.helpers({

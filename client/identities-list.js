@@ -5,6 +5,10 @@ Template['identities-list'].events({
 	}
 });
 
+Template['identities-list'].helpers({
+
+});
+
 Template['identities-list'].rendered = function() {
 	hidden = Session.get('hidePopup');
 	if (hidden === 'true') {

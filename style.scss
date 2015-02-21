@@ -5,10 +5,9 @@ $colorNegative: #be5454;
 $colorNeutral: #999;
 $colorMain: #37caa6;
 $colorSecondary: #4C83CA;
-
+$colorAccent: #79E94A;
 
 $fontSize: 18px;
-
 
 /*
  * Navigation / Logo
@@ -128,19 +127,25 @@ h1 {
 }
 
 .list-of-sets {
-	$color: $colorNeutral;
-	list-style: inside square;
-	color: lighten($color, 30%);
+	$color: $colorAccent;
+	$altColor: $colorNeutral;
+	margin-top: $fontSize;
+	color: $color;
+	font-size: $fontSize * 0.9;
 	h3 {
 		color: darken($colorMain, 5%);
 		margin: 0;
+		font-size: $fontSize * 1.8;
+		text-align: center;
 	}
 	ul {
+		list-style: inside square;
 		margin: $fontSize 0;
 		padding: 0;
+		text-align: center;
 	}
 	a {
-		color: $color;
+		color: $altColor;
 	}
 }
 

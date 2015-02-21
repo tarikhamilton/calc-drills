@@ -50,13 +50,23 @@ quiz.buttons = {
 	}
 }
 
+waitForMathJax = function() {
+	document.getElementsByClassName('main-content')[0].style.visibility = "hidden";
+	MathJax.Hub.Queue(function () {
+		document.getElementsByClassName('main-content')[0].style.visibility = "visible";
+	});
+};
+
 Template.quiz.rendered = function() {
 	drawBreadcrumbs();
+	waitForMathJax();
+	quiz.reset();
 	quiz.buttons.reset();
 };
 
 Template.study.rendered = function() {
 	drawBreadcrumbs();
+	waitForMathJax();
 }
 
 Template.mainLayout.rendered = function() {

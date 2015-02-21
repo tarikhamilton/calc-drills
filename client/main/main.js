@@ -56,6 +56,10 @@ Template.quiz.rendered = function() {
 
 Template.study.rendered = function() {
 	document.getElementById('quiz-up').href = '/quiz/' + FixtureNames.current;
+	document.getElementById('breadcrumbs').innerHTML = FixtureNames[FixtureNames.current].displayName;
+}
+
+Template.mainLayout.rendered = function() {
 }
 
 Template.mainLayout.helpers({
